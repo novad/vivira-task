@@ -42,8 +42,8 @@ class RepoListFragment : Fragment() {
                         progressBar.isVisible = false
                         repositoriesRecyclerView.isEnabled = true
                         fab.isEnabled = true
-                        emptyStateText.isVisible = false
-
+                        emptyStateText.isVisible = !it.dataOrNull().isNullOrEmpty()
+                        showEmptyQueryError()
                     }
                 }
                 is ViewState.Loading -> {
