@@ -1,4 +1,4 @@
-package dev.novad.repoexplorer
+package dev.novad.repoexplorer.uicommons
 
 sealed class ViewState<out T> {
     class Loading<T>(val data: T?) : ViewState<T>()

@@ -6,6 +6,7 @@ import com.nhaarman.mockitokotlin2.*
 import dev.novad.repoexplorer.model.RepoListResponse
 import dev.novad.repoexplorer.model.Repository
 import dev.novad.repoexplorer.repository.DataRepository
+import dev.novad.repoexplorer.uicommons.ViewState
 import junit.framework.TestCase.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

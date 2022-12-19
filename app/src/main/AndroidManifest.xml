@@ -17,6 +17,7 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/main_activity_title"
+            android:screenOrientation="fullSensor"
             android:theme="@style/Theme.RepoExplorer.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

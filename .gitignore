@@ -31,3 +31,4 @@ google-services.json
 *.bat
 gradlew
 *.jar
+.DS_Store

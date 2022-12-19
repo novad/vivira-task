@@ -1,4 +1,9 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="text_margin">16dp</dimen>
+    <dimen name="avatar_size">126dp</dimen>
+
+    <dimen name="margin_1x">4dp</dimen>
+    <dimen name="margin_2x">8dp</dimen>
+    <dimen name="margin_4x">16dp</dimen>
+    <dimen name="margin_18x">72dp</dimen>
 </resources>

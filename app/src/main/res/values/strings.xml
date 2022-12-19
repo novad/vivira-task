@@ -3,4 +3,8 @@
     <string name="search_button_description">Search</string>
     <string name="main_activity_title">Search for repositories</string>
     <string name="repo_list_fragment_label">Github repos finder</string>
+    <string name="repo_list_empty_label">Repository list is empty</string>
+    <string name="avatar_description">User avatar</string>
+    <string name="repo_name_hint">Cool repo name</string>
+    <string name="empty_result_text">Query didn\'t return any results</string>
 </resources>

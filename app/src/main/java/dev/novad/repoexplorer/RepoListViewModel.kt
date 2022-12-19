@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.novad.repoexplorer.model.Repository
 import dev.novad.repoexplorer.repository.DataRepository
+import dev.novad.repoexplorer.uicommons.ViewState
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -17,15 +18,22 @@ class RepoListViewModel @Inject constructor(private val repository: DataReposito
     val uiRepoListState = mutableUiRepoList
 
     var pageNumber = 0
-        get() = field
-        private set(value) {
-            field = value
-        }
+        private set
 
-    fun getRepositoriesList(query: String) {
+    private var query: String? = null
+
+    fun getRepositoriesListForQuery(query: String) {
+        pageNumber = 0
+        this.query = query
+        getRepositoriesList()
+    }
+
+    fun getRepositoriesList() {
+        val safeQuery = query ?: return
+
         mutableUiRepoList.value = ViewState.Loading(uiRepoListState.value?.dataOrNull())
         viewModelScope.launch {
-            val result = repository.getRepositoriesList(query, page = pageNumber + 1)
+            val result = repository.getRepositoriesList(safeQuery, page = pageNumber + 1)
             mutableUiRepoList.postValue(
                 if (result.isSuccess) {
                     val newRepositories = result.getOrNull()?.items ?: emptyList()
